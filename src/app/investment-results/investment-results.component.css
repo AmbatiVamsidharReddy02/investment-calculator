@@ -5,6 +5,11 @@ table {
   table-layout: fixed;
   border-spacing: 1rem;
   text-align: right;
+  font-family: monospace;
+}
+
+th{
+    color:goldenrod
 }
 
 table thead {
@@ -16,4 +21,8 @@ table tbody {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 0.85rem;
   color: #c2e9e0;
+}   
+
+td{
+    color: black;
 }

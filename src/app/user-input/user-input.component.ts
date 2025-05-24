@@ -18,7 +18,11 @@ export class UserInputComponent {
   @Output() showResults = new EventEmitter<boolean>();
 
   onSubmit() {
-    this.investmentService.calculateInvestmentResults(parseInt(this.intialInvestment), parseInt(this.duration), parseInt(this.expectedReturn), parseInt(this.annualInvestment));
-    this.showResults.emit(true);
+    if (this.intialInvestment == '' && this.annualInvestment == '' && this.duration == '' && this.expectedReturn == '') {
+      this.showResults.emit(false);
+    } else {
+      this.investmentService.calculateInvestmentResults(parseInt(this.intialInvestment), parseInt(this.duration), parseInt(this.expectedReturn), parseInt(this.annualInvestment));
+      this.showResults.emit(true);
+    }
   }
 }
